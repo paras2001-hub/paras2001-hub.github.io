@@ -246,106 +246,106 @@
 
 			});
 
-		// Menu.
-			var $menu = $('#menu'),
-				$menuInner;
+		// // Menu.
+		// 	var $menu = $('#menu'),
+		// 		$menuInner;
 
-			$menu.wrapInner('<div class="inner"></div>');
-			$menuInner = $menu.children('.inner');
-			$menu._locked = false;
+		// 	$menu.wrapInner('<div class="inner"></div>');
+		// 	$menuInner = $menu.children('.inner');
+		// 	$menu._locked = false;
 
-			$menu._lock = function() {
+		// 	$menu._lock = function() {
 
-				if ($menu._locked)
-					return false;
+		// 		if ($menu._locked)
+		// 			return false;
 
-				$menu._locked = true;
+		// 		$menu._locked = true;
 
-				window.setTimeout(function() {
-					$menu._locked = false;
-				}, 350);
+		// 		window.setTimeout(function() {
+		// 			$menu._locked = false;
+		// 		}, 350);
 
-				return true;
+		// 		return true;
 
-			};
+		// 	};
 
-			$menu._show = function() {
+		// 	$menu._show = function() {
 
-				if ($menu._lock())
-					$body.addClass('is-menu-visible');
+		// 		if ($menu._lock())
+		// 			$body.addClass('is-menu-visible');
 
-			};
+		// 	};
 
-			$menu._hide = function() {
+		// 	$menu._hide = function() {
 
-				if ($menu._lock())
-					$body.removeClass('is-menu-visible');
+		// 		if ($menu._lock())
+		// 			$body.removeClass('is-menu-visible');
 
-			};
+		// 	};
 
-			$menu._toggle = function() {
+		// 	$menu._toggle = function() {
 
-				if ($menu._lock())
-					$body.toggleClass('is-menu-visible');
+		// 		if ($menu._lock())
+		// 			$body.toggleClass('is-menu-visible');
 
-			};
+		// 	};
 
-			$menuInner
-				.on('click', function(event) {
-					event.stopPropagation();
-				})
-				.on('click', 'a', function(event) {
+		// 	$menuInner
+		// 		.on('click', function(event) {
+		// 			event.stopPropagation();
+		// 		})
+		// 		.on('click', 'a', function(event) {
 
-					var href = $(this).attr('href');
+		// 			var href = $(this).attr('href');
 
-					event.preventDefault();
-					event.stopPropagation();
+		// 			event.preventDefault();
+		// 			event.stopPropagation();
 
-					// Hide.
-						$menu._hide();
+		// 			// Hide.
+		// 				$menu._hide();
 
-					// Redirect.
-						window.setTimeout(function() {
-							window.location.href = href;
-						}, 250);
+		// 			// Redirect.
+		// 				window.setTimeout(function() {
+		// 					window.location.href = href;
+		// 				}, 250);
 
-				});
+		// 		});
 
-			$menu
-				.appendTo($body)
-				.on('click', function(event) {
+		// 	$menu
+		// 		.appendTo($body)
+		// 		.on('click', function(event) {
 
-					event.stopPropagation();
-					event.preventDefault();
+		// 			event.stopPropagation();
+		// 			event.preventDefault();
 
-					$body.removeClass('is-menu-visible');
+		// 			$body.removeClass('is-menu-visible');
 
-				})
-				.append('<a class="close" href="#menu">Close</a>');
+		// 		})
+		// 		.append('<a class="close" href="#menu">Close</a>');
 
-			$body
-				.on('click', 'a[href="#menu"]', function(event) {
+		// 	$body
+		// 		.on('click', 'a[href="#menu"]', function(event) {
 
-					event.stopPropagation();
-					event.preventDefault();
+		// 			event.stopPropagation();
+		// 			event.preventDefault();
 
-					// Toggle.
-						$menu._toggle();
+		// 			// Toggle.
+		// 				$menu._toggle();
 
-				})
-				.on('click', function(event) {
+		// 		})
+		// 		.on('click', function(event) {
 
-					// Hide.
-						$menu._hide();
+		// 			// Hide.
+		// 				$menu._hide();
 
-				})
-				.on('keydown', function(event) {
+		// 		})
+		// 		.on('keydown', function(event) {
 
-					// Hide on escape.
-						if (event.keyCode == 27)
-							$menu._hide();
+		// 			// Hide on escape.
+		// 				if (event.keyCode == 27)
+		// 					$menu._hide();
 
-				});
+		// 		});
 
 	});
 

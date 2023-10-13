@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+    Forty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  -->
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include header.html %}
+
+    <section id="banner" class="style2">
+      <div class="inner">
+        <span class="image">
+          <img src="{{ site.baseurl }}/{{ page.image }}" alt="" />
+        </span>
+        <header class="major">
+          <h1>{{ page.title }}</h1>
+        </header>
+        <div class="content">{{ page.description }}</div>
+      </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main">
+      <!-- Two -->
+      <section id="two" class="spotlights">
+        {% for work in site.works %} {% if work.title != 404 %}
+        <section>
+          <div class="slideshow-wrapper">
+            <section class="slideshow">
+              <div class="slide slideshow-container image">
+                <img class="slider-image" src="{{ work.image1 }}" alt="" />
+                <img class="slider-image" src="{{ work.image2 }}" alt="" />
+                <img class="slider-image" src="{{ work.image3 }}" alt=""  />
+                <img class="slider-image" src="{{ work.image4 }}" alt=""  />
+              </div>
+            </section>
+          </div>
+          <div class="content">
+            <div class="inner">
+              <header class="major">
+                <h3>{{ work.title }}</h3>
+                <p>{{ work.description }}</p>
+              </header>
+              <p>{{ work.content }}</p>
+              <ul class="actions">
+                {% if work.learn_more != null %}
+                <li><a href="{{ work.learn_more }}" class="button">Repo Link</a></li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </section>
+        {% endif %} {% endfor %}
+      </section>
+
+      <!-- Three -->
+      <section id="three">
+        <div class="inner">
+          <header class="major">
+            <h2>And many more to come in future</h2>
+          </header>
+            I am always on the lookout for innovative technologies that shake up our current 'meta'. </br>
+            As time unfolds, you can expect to witness an ever-growing array of projects harnessing the power of these technologies.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    {% include footer.html %}
+  </body>
+</html>

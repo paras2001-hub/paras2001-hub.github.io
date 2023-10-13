@@ -26,9 +26,11 @@
 		text-transform: uppercase;
 		top: 0;
 		width: 100%;
+		align-items: center;
 		z-index: _misc(z-index-base);
 
 		.logo {
+			z-index: 10000;
 			border: 0;
 			display: inline-block;
 			font-size: 0.8em;
