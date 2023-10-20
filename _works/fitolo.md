@@ -8,6 +8,7 @@ image2: assets/images/fitolo2.png
 image3: assets/images/fitolo3.png
 image4: assets/images/fitolo4.png
 ---
+<i> </i>
 
 - Achieved 30% reduction in monthly pricing by migrating the Fitolo backend from Firebase to Amazon Web Services (AWS).
 - Conducted a comprehensive refinement of the Fitolo Flutter Application, ensuring seamless integration with the newly developed AWS-based backend.
